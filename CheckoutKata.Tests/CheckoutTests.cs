@@ -45,5 +45,23 @@ namespace CheckoutKata.Tests
             var result = _checkout.GetTotalPrice();
             Assert.IsInstanceOf(typeof(int),result);
         }
+
+        [Test]
+        public void WhenGetTotalPriceReturnsTheCorrectPrice()
+        {
+            _mockSpecialPrice.Object.SpecialPriceID = 1;
+            _mockSpecialPrice.Object.SpecialPriceOffer = 45;
+            _mockSpecialPrice.Object.SpecialPriceQuantity = 2;
+
+            _mockProduct.Object.ProdID = 1;
+            _mockProduct.Object.ProdName = "A";
+            _mockProduct.Object.ProdPrice = 50;
+            _mockProduct.Object.SpecialPrice = _mockSpecialPrice.Object;
+
+            _checkout.ScanItem(_mockProduct.Object);
+            var result = _checkout.GetTotalPrice();
+
+            Assert.AreEqual(50, result);
+        }
     }
 }
