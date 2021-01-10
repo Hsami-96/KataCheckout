@@ -15,7 +15,18 @@ namespace CheckoutKata.Models
 
         public SpecialPrice(int specialPriceID, int specialPriceQuantity, int specialPriceOffer)
         {
-            throw new NotImplementedException();
+            if (specialPriceID <= 0)
+                throw new ArgumentException("specialPrice ID cannot be 0 or less", nameof(specialPriceID));
+
+            if (specialPriceQuantity <= 0)
+                throw new ArgumentException("specialPrice quantity must be greater than zero", nameof(specialPriceQuantity));
+
+            if (specialPriceOffer <= 0)
+                throw new ArgumentException("specialPrice Offer must be greater than zero", nameof(specialPriceOffer));
+
+            SpecialPriceID = specialPriceID;
+            SpecialPriceQuantity = specialPriceQuantity;
+            SpecialPriceOffer = specialPriceOffer;
         }
         
     }
