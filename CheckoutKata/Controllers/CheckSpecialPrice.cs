@@ -35,9 +35,20 @@ namespace CheckoutKata.Controllers
         /// <param name="originalPriceOfProduct">orginal price</param>
         public int GetQuantityAndApplyOffers(int numberOfProductsInBasket, int specialPriceQuantity, int specialPriceOffer, int originalPriceOfProduct)
         {
-            throw new NotImplementedException();
-        }
+            //gets number of items which the offer will be applied on
+            var NumberOfOffersToBeUsed = numberOfProductsInBasket / specialPriceQuantity;
+            //gets remaining items that will have the normal price applied on
+            var RemainingQuantityWithoutOffer = numberOfProductsInBasket - (NumberOfOffersToBeUsed * specialPriceQuantity);
 
-       
+            //applies the new offer on the items if there is an offer to be used
+            var OfferValue = NumberOfOffersToBeUsed > 0 ? NumberOfOffersToBeUsed * specialPriceOffer : 0;
+            //applies the old price on the remaining items if there are any left
+            var ValueWithoutOffer = RemainingQuantityWithoutOffer > 0 ? RemainingQuantityWithoutOffer * originalPriceOfProduct : 0;
+
+            //appends the price together to give new price
+            var TotalNewPrice = OfferValue + ValueWithoutOffer;
+            return TotalNewPrice;
+
+        }
     }
 }
