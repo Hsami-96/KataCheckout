@@ -1,0 +1,13 @@
+C:\Users\hsamir\Desktop\HaniPersonal\Projects\CheckoutKata\CheckoutKata\bin\Debug\netcoreapp3.1\CheckoutKata.exe
+C:\Users\hsamir\Desktop\HaniPersonal\Projects\CheckoutKata\CheckoutKata\bin\Debug\netcoreapp3.1\CheckoutKata.deps.json
+C:\Users\hsamir\Desktop\HaniPersonal\Projects\CheckoutKata\CheckoutKata\bin\Debug\netcoreapp3.1\CheckoutKata.runtimeconfig.json
+C:\Users\hsamir\Desktop\HaniPersonal\Projects\CheckoutKata\CheckoutKata\bin\Debug\netcoreapp3.1\CheckoutKata.runtimeconfig.dev.json
+C:\Users\hsamir\Desktop\HaniPersonal\Projects\CheckoutKata\CheckoutKata\bin\Debug\netcoreapp3.1\CheckoutKata.dll
+C:\Users\hsamir\Desktop\HaniPersonal\Projects\CheckoutKata\CheckoutKata\bin\Debug\netcoreapp3.1\CheckoutKata.pdb
+C:\Users\hsamir\Desktop\HaniPersonal\Projects\CheckoutKata\CheckoutKata\obj\Debug\netcoreapp3.1\CheckoutKata.csprojAssemblyReference.cache
+C:\Users\hsamir\Desktop\HaniPersonal\Projects\CheckoutKata\CheckoutKata\obj\Debug\netcoreapp3.1\CheckoutKata.AssemblyInfoInputs.cache
+C:\Users\hsamir\Desktop\HaniPersonal\Projects\CheckoutKata\CheckoutKata\obj\Debug\netcoreapp3.1\CheckoutKata.AssemblyInfo.cs
+C:\Users\hsamir\Desktop\HaniPersonal\Projects\CheckoutKata\CheckoutKata\obj\Debug\netcoreapp3.1\CheckoutKata.csproj.CoreCompileInputs.cache
+C:\Users\hsamir\Desktop\HaniPersonal\Projects\CheckoutKata\CheckoutKata\obj\Debug\netcoreapp3.1\CheckoutKata.dll
+C:\Users\hsamir\Desktop\HaniPersonal\Projects\CheckoutKata\CheckoutKata\obj\Debug\netcoreapp3.1\CheckoutKata.pdb
+C:\Users\hsamir\Desktop\HaniPersonal\Projects\CheckoutKata\CheckoutKata\obj\Debug\netcoreapp3.1\CheckoutKata.genruntimeconfig.cache
