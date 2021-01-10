@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "1IvXuwJE14bGMHqNkQDtGaHYK6STcGfsAnXWVOLjdKnEddRIZNdxJGD/F8jtNPMxdmP1XbCIT9kyf5bTHJprKQ==",
+  "dgSpecHash": "Tq4WRKYAxZu87nQ/MDomltpbLHKtDLs9z3RuFI3HD65jiv+weGKes5V0RncqwhAhdFSowVAXy/U5adKiNWhCxg==",
   "success": true,
   "projectFilePath": "C:\\Users\\hsamir\\Desktop\\HaniPersonal\\Projects\\CheckoutKata\\CheckoutKata.Tests\\CheckoutKata.Tests.csproj",
   "expectedPackageFiles": [
@@ -16,6 +16,7 @@
     "C:\\Users\\hsamir\\.nuget\\packages\\microsoft.win32.primitives\\4.3.0\\microsoft.win32.primitives.4.3.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.win32.registry\\4.3.0\\microsoft.win32.registry.4.3.0.nupkg.sha512",
     "C:\\Users\\hsamir\\.nuget\\packages\\moq\\4.15.2\\moq.4.15.2.nupkg.sha512",
+    "C:\\Users\\hsamir\\.nuget\\packages\\mstest.testframework\\2.1.2\\mstest.testframework.2.1.2.nupkg.sha512",
     "C:\\Users\\hsamir\\.nuget\\packages\\netstandard.library\\2.0.0\\netstandard.library.2.0.0.nupkg.sha512",
     "C:\\Users\\hsamir\\.nuget\\packages\\newtonsoft.json\\9.0.1\\newtonsoft.json.9.0.1.nupkg.sha512",
     "C:\\Users\\hsamir\\.nuget\\packages\\nuget.frameworks\\5.0.0\\nuget.frameworks.5.0.0.nupkg.sha512",

@@ -25,10 +25,7 @@ namespace CheckoutKata.Tests
             _mockSpecialPrice.Object.SpecialPriceOffer = 45;
             _mockSpecialPrice.Object.SpecialPriceQuantity = 2;
 
-
-            var _mockProduct = new Product(1, "", 5, _mockSpecialPrice.Object);
-
-            Assert.IsInstanceOf(typeof(Product), _mockProduct);
+            Assert.Throws<ArgumentException>(() => new Product(1, "", 5, _mockSpecialPrice.Object));
         }
         [Test]
         public void WhenIdOfProductIsLessThanOne()
@@ -38,9 +35,7 @@ namespace CheckoutKata.Tests
             _mockSpecialPrice.Object.SpecialPriceQuantity = 2;
 
 
-            var _mockProduct = new Product(0, "A", 5, _mockSpecialPrice.Object);
-
-            Assert.IsInstanceOf(typeof(Product), _mockProduct);
+            Assert.Throws<ArgumentException>(() => new Product(0, "A", 5, _mockSpecialPrice.Object));
         }
 
         [Test]
@@ -50,10 +45,8 @@ namespace CheckoutKata.Tests
             _mockSpecialPrice.Object.SpecialPriceOffer = 45;
             _mockSpecialPrice.Object.SpecialPriceQuantity = 2;
 
+            Assert.Throws<ArgumentException>(() => new Product(1, "A", 0, _mockSpecialPrice.Object));
 
-            var _mockProduct = new Product(1, "A", 0, _mockSpecialPrice.Object);
-
-            Assert.IsInstanceOf(typeof(Product), _mockProduct);
         }
 
 

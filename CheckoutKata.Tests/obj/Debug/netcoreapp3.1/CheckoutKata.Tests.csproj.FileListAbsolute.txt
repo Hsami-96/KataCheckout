@@ -94,8 +94,10 @@ C:\Users\hsamir\Desktop\HaniPersonal\Projects\CheckoutKata\CheckoutKata.Tests\bi
 C:\Users\hsamir\Desktop\HaniPersonal\Projects\CheckoutKata\CheckoutKata.Tests\bin\Debug\netcoreapp3.1\Castle.Core.dll
 C:\Users\hsamir\Desktop\HaniPersonal\Projects\CheckoutKata\CheckoutKata.Tests\bin\Debug\netcoreapp3.1\Moq.dll
 C:\Users\hsamir\Desktop\HaniPersonal\Projects\CheckoutKata\CheckoutKata.Tests\bin\Debug\netcoreapp3.1\CheckoutKata.pdb
-C:\Users\hsamir\Desktop\HaniPersonal\Projects\CheckoutKata\CheckoutKata.Tests\obj\Debug\netcoreapp3.1\CheckoutKata.Tests.csproj.CoreCompileInputs.cache
 C:\Users\hsamir\Desktop\HaniPersonal\Projects\CheckoutKata\CheckoutKata.Tests\obj\Debug\netcoreapp3.1\CheckoutKata.Tests.csproj.CopyComplete
 C:\Users\hsamir\Desktop\HaniPersonal\Projects\CheckoutKata\CheckoutKata.Tests\obj\Debug\netcoreapp3.1\CheckoutKata.Tests.dll
 C:\Users\hsamir\Desktop\HaniPersonal\Projects\CheckoutKata\CheckoutKata.Tests\obj\Debug\netcoreapp3.1\CheckoutKata.Tests.pdb
 C:\Users\hsamir\Desktop\HaniPersonal\Projects\CheckoutKata\CheckoutKata.Tests\obj\Debug\netcoreapp3.1\CheckoutKata.Tests.genruntimeconfig.cache
+C:\Users\hsamir\Desktop\HaniPersonal\Projects\CheckoutKata\CheckoutKata.Tests\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\hsamir\Desktop\HaniPersonal\Projects\CheckoutKata\CheckoutKata.Tests\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\hsamir\Desktop\HaniPersonal\Projects\CheckoutKata\CheckoutKata.Tests\obj\Debug\netcoreapp3.1\CheckoutKata.Tests.csproj.CoreCompileInputs.cache
