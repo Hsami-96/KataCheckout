@@ -12,5 +12,11 @@ namespace CheckoutKata.Models
         public int SpecialPriceID { get; set; }
         public int SpecialPriceQuantity { get; set; }
         public int SpecialPriceOffer { get; set; }
+
+        public SpecialPrice(int specialPriceID, int specialPriceQuantity, int specialPriceOffer)
+        {
+            throw new NotImplementedException();
+        }
+        
     }
 }

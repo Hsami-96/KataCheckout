@@ -49,6 +49,34 @@ namespace CheckoutKata.Tests
 
         }
 
+        [Test]
+        public void WhenAllConditionsAreMetToCreateProduct()
+        {
+            _mockSpecialPrice.Object.SpecialPriceID = 1;
+            _mockSpecialPrice.Object.SpecialPriceOffer = 45;
+            _mockSpecialPrice.Object.SpecialPriceQuantity = 2;
+
+            var result = new Product(1, "A", 5, _mockSpecialPrice.Object);
+
+            Assert.IsInstanceOf(typeof(Product), result);
+        }
+
+        [Test]
+        public void WhenSpecialPriceIdIsEmptyOrNull()
+        {
+            Assert.Throws<ArgumentException>(() => new SpecialPrice(0, 1, 15));
+        }
+        [Test]
+        public void WhenSpecialPriceQuantityIsZero()
+        {
+            Assert.Throws<ArgumentException>(() => new SpecialPrice(1, 0, 15));
+        }
+        [Test]
+        public void WhenSpecialPriceOfferIsZero()
+        {
+            Assert.Throws<ArgumentException>(() => new SpecialPrice(1, 5, 0));
+        }
+
 
     }
 }
