@@ -35,7 +35,14 @@ namespace CheckoutKata.Controllers
                 throw new ArgumentException("No Items in basket");
 
             var TotalForItems = _products.Sum(x => x.ProdPrice);
-            var CheckForEligibleItems = CheckItemsEligibleForDiscount();
+            var ItemsEligibleForDiscount = CheckItemsEligibleForDiscount();
+            if(ItemsEligibleForDiscount.Count() > 0)
+            {
+                foreach(var productForDiscount in ItemsEligibleForDiscount)
+                {
+
+                }
+            }
             return TotalForItems;
         }
 
@@ -43,16 +50,15 @@ namespace CheckoutKata.Controllers
         /// check items eligible for discount
         /// </summary>
         ///  /// <param name="products">The products in basket</param>
-        public bool CheckItemsEligibleForDiscount()
+        public IList<IProduct> CheckItemsEligibleForDiscount()
         {
             if (_products == null)
                 throw new ArgumentException("products not valid", nameof(_products));
 
-            var ItemsEligibleForDiscount = _products.Where(x => x.SpecialPrice != null).GroupBy(x => x).Where(x => x.Count() > 1).Select(x => x.Key).Distinct();
+            IList<IProduct> productsWithOfferAvailble = new List<IProduct>();
+            productsWithOfferAvailble = _products.Where(x => x.SpecialPrice != null).GroupBy(x => x).Where(x => x.Count() > 1).Select(x => x.Key).Distinct().ToList();
 
-            var AnyItemsEligibleForDiscount = ItemsEligibleForDiscount.Count() > 0 ? true : false;
-
-            return AnyItemsEligibleForDiscount;
+            return productsWithOfferAvailble;
         }
 
     }

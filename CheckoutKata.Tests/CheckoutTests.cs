@@ -4,6 +4,7 @@ using Moq;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace CheckoutKata.Tests
 {
@@ -12,15 +13,16 @@ namespace CheckoutKata.Tests
         private Checkout _checkout;
         private Mock<IProduct> _mockProduct;
         private Mock<ISpecialPrice> _mockSpecialPrice;
+        private Mock<ICheckSpecialPrice> _mockCheckSpecialPrice;
         private IList<Mock<IProduct>> _mockListProducts;
 
         [SetUp]
         public void Setup()
         {
-            _checkout = new Checkout();
+            _mockCheckSpecialPrice = new Mock<ICheckSpecialPrice>();
             _mockProduct = new Mock<IProduct>();
             _mockSpecialPrice = new Mock<ISpecialPrice>();
-
+            _checkout = new Checkout(_mockCheckSpecialPrice.Object);
             _mockProduct.SetupAllProperties();
             _mockSpecialPrice.SetupAllProperties();
 
@@ -92,8 +94,8 @@ namespace CheckoutKata.Tests
         {
             _checkout.ScanItem(_mockProduct.Object);
             _checkout.GetTotalPrice();
-
-            Assert.AreEqual(false, _checkout.CheckItemsEligibleForDiscount());
+            var itemsEligibleForDiscount = _checkout.CheckItemsEligibleForDiscount().Count();
+            Assert.AreEqual(0, itemsEligibleForDiscount);
 
             
         }
@@ -105,7 +107,9 @@ namespace CheckoutKata.Tests
             _checkout.ScanItem(_mockProduct.Object);
             _checkout.GetTotalPrice();
 
-            Assert.AreEqual(true, _checkout.CheckItemsEligibleForDiscount());
+            var itemsEligibleForDiscount = _checkout.CheckItemsEligibleForDiscount().Count();
+
+            Assert.AreEqual(1, itemsEligibleForDiscount);
 
 
         }
