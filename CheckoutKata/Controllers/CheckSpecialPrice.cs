@@ -30,10 +30,10 @@ namespace CheckoutKata.Controllers
         /// 5 and offer is 3 for A, then reamning 2 will be appended with normal price
         /// </summary>        
         /// <param name="numberOfProductsInBasket">number Of The item in basket</param>
-        /// <param name="quantityOfProduct">special price quantity</param>
-        /// <param name="specialPriceOfProduct">special price offer price</param>
+        /// <param name="specialPriceQuantity">special price quantity</param>
+        /// <param name="specialPriceOffer">special price offer price</param>
         /// <param name="originalPriceOfProduct">orginal price</param>
-        public int GetQuantityAndApplyOffers(int numberOfProductsInBasket, int quantityOfProduct, int specialPriceOfProduct, int originalPriceOfProduct)
+        public int GetQuantityAndApplyOffers(int numberOfProductsInBasket, int specialPriceQuantity, int specialPriceOffer, int originalPriceOfProduct)
         {
             throw new NotImplementedException();
         }
