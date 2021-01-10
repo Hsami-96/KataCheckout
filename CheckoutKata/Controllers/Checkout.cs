@@ -21,6 +21,10 @@ namespace CheckoutKata.Controllers
 
             _products.Add(product);
         }
+
+        /// <summary>
+        /// get total for all items
+        /// </summary>
         public int GetTotalPrice()
         {
             if (_products.Count <= 0)
@@ -30,6 +34,13 @@ namespace CheckoutKata.Controllers
             return TotalForItems;
         }
 
-     
+        /// <summary>
+        /// check items eligible for discount
+        /// </summary>
+        public bool CheckItemsEligibleForDiscount()
+        {
+            throw new NotImplementedException();
+        }
+
     }
 }

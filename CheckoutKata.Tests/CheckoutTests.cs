@@ -88,6 +88,18 @@ namespace CheckoutKata.Tests
         }
 
         [Test]
+        public void WhenEligibleItemsReturnsTrueForSpecialOfferProducts()
+        {
+            var mockedCheckout = new Mock<ICheckout>();
+            mockedCheckout.Setup(x => x.ScanItem(_mockProduct.Object));
+            mockedCheckout.Setup(x => x.GetTotalPrice());
+
+            mockedCheckout.Verify(x => x.CheckItemsEligibleForDiscount(), Times.Once);
+
+            
+        }
+
+        [Test]
         public void WhenGetTotalPriceReturnsPriceWithDeductions()
         {
             var itemTwo = new Mock<IProduct>();
@@ -112,8 +124,6 @@ namespace CheckoutKata.Tests
             var result = _checkout.GetTotalPrice();
 
             Assert.AreEqual(130, result);
-
-
 
         }
     }

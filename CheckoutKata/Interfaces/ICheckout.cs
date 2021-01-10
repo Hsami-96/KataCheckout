@@ -9,5 +9,6 @@ namespace CheckoutKata.Interfaces
         void ScanItem(IProduct product);
 
         int GetTotalPrice();
+        bool CheckItemsEligibleForDiscount();
     }
 }
