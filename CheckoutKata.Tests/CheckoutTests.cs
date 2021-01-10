@@ -49,10 +49,14 @@ namespace CheckoutKata.Tests
         [Test]
         public void WhenGetTotalPriceReturnsTheCorrectPrice()
         {
+            _mockProduct.SetupAllProperties();
+            _mockSpecialPrice.SetupAllProperties();
+
             _mockSpecialPrice.Object.SpecialPriceID = 1;
             _mockSpecialPrice.Object.SpecialPriceOffer = 45;
             _mockSpecialPrice.Object.SpecialPriceQuantity = 2;
 
+            
             _mockProduct.Object.ProdID = 1;
             _mockProduct.Object.ProdName = "A";
             _mockProduct.Object.ProdPrice = 50;

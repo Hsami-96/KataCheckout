@@ -1,6 +1,7 @@
 ﻿using CheckoutKata.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace CheckoutKata.Controllers
@@ -25,7 +26,8 @@ namespace CheckoutKata.Controllers
             if (_products.Count <= 0)
                 throw new ArgumentException("No Items in basket");
 
-            return 0;
+            var TotalForItems = _products.Sum(x => x.ProdPrice);
+            return TotalForItems;
         }
 
      
