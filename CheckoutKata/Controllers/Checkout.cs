@@ -9,7 +9,11 @@ namespace CheckoutKata.Controllers
     public class Checkout : ICheckout
     {
         private readonly IList<IProduct> _products = new List<IProduct>();
-
+        private readonly ICheckSpecialPrice _checkSpecialPrice;
+        public Checkout(ICheckSpecialPrice checkSpecialPrice)
+        {
+            _checkSpecialPrice = checkSpecialPrice;
+        }
         /// <summary>
         /// Scan item and add it to the shopping list
         /// </summary>
