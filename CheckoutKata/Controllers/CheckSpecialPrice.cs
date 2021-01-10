@@ -22,7 +22,17 @@ namespace CheckoutKata.Controllers
             if (product.SpecialPrice == null)
                 throw new ArgumentException("No Special price available on item", nameof(product.SpecialPrice));
 
-            return 0;
+            //gets the total price before offer
+            _totalPriceOfProducts = numberOfProductsInBasket * product.ProdPrice;
+
+            //gets new total price with offer deducted
+            var TotalNewPrice = GetQuantityAndApplyOffers(numberOfProductsInBasket, product.SpecialPrice.SpecialPriceQuantity,
+                product.SpecialPrice.SpecialPriceOffer, product.ProdPrice);
+
+            //gets the deducted value from old total
+            _totalPriceOfProducts -= TotalNewPrice;
+
+            return _totalPriceOfProducts;
         }
 
         /// <summary>
