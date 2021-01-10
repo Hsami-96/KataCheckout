@@ -14,7 +14,7 @@ namespace CheckoutKata.Tests
         private Mock<IProduct> _mockProduct;
         private Mock<ISpecialPrice> _mockSpecialPrice;
         private Mock<ICheckSpecialPrice> _mockCheckSpecialPrice;
-        private IList<Mock<IProduct>> _mockListProducts;
+
 
         [SetUp]
         public void Setup()
