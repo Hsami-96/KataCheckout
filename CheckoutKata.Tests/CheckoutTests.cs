@@ -18,12 +18,13 @@ namespace CheckoutKata.Tests
         [Test]
         public void WhenNullItemIsPassedToScan()
         {
-            _checkout.ScanItem(null);
+            _checkout.ScanItem("TestItem");
         }
 
         [Test]
         public void WhenTotalPriceIsCalledToReturnThePrice()
         {
+            _checkout.ScanItem("TestItem");
             var result = _checkout.GetTotalPrice();
             Assert.IsInstanceOf(typeof(int),result);
         }
