@@ -31,15 +31,24 @@ namespace CheckoutKata.Controllers
                 throw new ArgumentException("No Items in basket");
 
             var TotalForItems = _products.Sum(x => x.ProdPrice);
+            var CheckForEligibleItems = CheckItemsEligibleForDiscount();
             return TotalForItems;
         }
 
         /// <summary>
         /// check items eligible for discount
         /// </summary>
+        ///  /// <param name="products">The products in basket</param>
         public bool CheckItemsEligibleForDiscount()
         {
-            throw new NotImplementedException();
+            if (_products == null)
+                throw new ArgumentException("products not valid", nameof(_products));
+
+            var ItemsEligibleForDiscount = _products.Where(x => x.SpecialPrice != null).GroupBy(x => x).Where(x => x.Count() > 1).Select(x => x.Key).Distinct();
+
+            var AnyItemsEligibleForDiscount = ItemsEligibleForDiscount.Count() > 0 ? true : false;
+
+            return AnyItemsEligibleForDiscount;
         }
 
     }
