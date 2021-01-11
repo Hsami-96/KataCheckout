@@ -22,9 +22,11 @@ namespace CheckoutKata.Tests
             _mockCheckSpecialPrice = new Mock<ICheckSpecialPrice>();
             _mockProduct = new Mock<IProduct>();
             _mockSpecialPrice = new Mock<ISpecialPrice>();
-            _checkout = new Checkout(_mockCheckSpecialPrice.Object);
+            
+
             _mockProduct.SetupAllProperties();
             _mockSpecialPrice.SetupAllProperties();
+            _mockCheckSpecialPrice.SetupAllProperties();
 
             _mockSpecialPrice.Object.SpecialPriceID = 1;
             _mockSpecialPrice.Object.SpecialPriceOffer = 130;
@@ -35,6 +37,8 @@ namespace CheckoutKata.Tests
             _mockProduct.Object.ProdPrice = 50;
             _mockProduct.Object.SpecialPrice = _mockSpecialPrice.Object;
 
+            _mockCheckSpecialPrice.Setup(x => x.GetTotalOfferPrice(3, _mockProduct.Object)).Returns(20);
+            _checkout = new Checkout(_mockCheckSpecialPrice.Object);
         }
 
         [Test]
@@ -117,25 +121,12 @@ namespace CheckoutKata.Tests
         [Test]
         public void WhenGetTotalPriceReturnsPriceWithDeductions()
         {
-            var itemTwo = new Mock<IProduct>();
-            var itemThree = new Mock<IProduct>();
-
-            itemTwo.SetupAllProperties();
-            itemThree.SetupAllProperties();
-
-            itemTwo.Object.ProdID = 1;
-            itemTwo.Object.ProdName = "A";
-            itemTwo.Object.ProdPrice = 50;
-            itemTwo.Object.SpecialPrice = _mockSpecialPrice.Object;
-
-            itemThree.Object.ProdID = 1;
-            itemThree.Object.ProdName = "A";
-            itemThree.Object.ProdPrice = 50;
-            itemThree.Object.SpecialPrice = _mockSpecialPrice.Object;
 
             _checkout.ScanItem(_mockProduct.Object);
-            _checkout.ScanItem(itemTwo.Object);
-            _checkout.ScanItem(itemThree.Object);
+            _checkout.ScanItem(_mockProduct.Object);
+            _checkout.ScanItem(_mockProduct.Object);
+
+           
             var result = _checkout.GetTotalPrice();
 
             Assert.AreEqual(130, result);

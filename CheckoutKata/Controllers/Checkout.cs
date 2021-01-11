@@ -40,7 +40,10 @@ namespace CheckoutKata.Controllers
             {
                 foreach(var productForDiscount in ItemsEligibleForDiscount)
                 {
+                    var numberOfItems = _products.Where(x => x == productForDiscount).Count();
 
+                    var GetDeductionValue = _checkSpecialPrice.GetTotalOfferPrice(numberOfItems, productForDiscount);
+                    TotalForItems -= GetDeductionValue;
                 }
             }
             return TotalForItems;

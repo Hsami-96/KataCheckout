@@ -13,7 +13,7 @@ namespace CheckoutKata
             IList<ISpecialPrice> specialPrices = new List<ISpecialPrice>
             {
                 new SpecialPrice(2, 2, 45),
-                new SpecialPrice(1, 130, 3),
+                new SpecialPrice(1, 3, 130),
 
             };
             IList<Product> products = new List<Product>
